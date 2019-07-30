@@ -1,9 +1,7 @@
  // Variables
 const show = document.querySelector('#tweet-list');
 const storage = [];
-
-
-
+console.log(show.classList)
 
  // Event Listeners
  eventListeners();
@@ -11,10 +9,11 @@ const storage = [];
  function eventListeners() {
    // form submission
    document.querySelector('#form').addEventListener('submit', newTweet);
+
+   //remove the element
+   show.addEventListener('click', deleteLi)
  }
- 
- 
- 
+  
  // Functions
  
  function newTweet(e) {
@@ -32,9 +31,6 @@ const storage = [];
    removeBtn.classList = 'fe fe-close';
    li.appendChild(removeBtn)
 
-   //remove the element
-    removeBtn.addEventListener('click', deleteLi)
-
 //    //storing the values
 //    storage.push(li);
 //    localStorage.setItem(storage)
@@ -48,7 +44,7 @@ const storage = [];
  //deleteLi Functioln
 function deleteLi(e) {
     if (e.target.classList.contains('fe-close')) {
-        removeBtn.parentElement.remove();
+        e.target.parentElement.remove();
     }
 }
  
