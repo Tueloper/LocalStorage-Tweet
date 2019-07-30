@@ -5,8 +5,12 @@ h1, h2 {
 #content {
     margin-top: 40px;
 }
-.remove-tweet,
-.remove-tweet:hover {
+li {
+    display: flex;
+    justify-content: space-between;
+}
+.fe-close,
+.fe-close:hover {
     float: right;
     cursor: pointer;
     color: red;
